@@ -1,0 +1,21 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+    <section id="content">
+        {% for block in post %}
+            {% if block['tag'] != 'img' %}
+                <{{ block['tag'] }} class="{{ block['class'] }}" id="{{ block['id'] }}">
+                    {{ f['convertLink'](block['content'])|safe }}
+                </{{ block['tag'] }}>
+            {% elif block['tag'] == 'code' %}
+                <pre>
+                    <code class="{{ block['class'] }}" id="{{ block['id'] }}">{{ block['content'] }}</code>
+                </pre>
+
+
+            {% else %}
+                <{{ block['tag'] }} class="{{ block['class'] }}" id="{{ block['id'] }}" src="{{ block['content']|safe }}">
+            {% endif %}
+        {% endfor %}
+    </section>
+{% endblock %}

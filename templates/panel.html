@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='panel.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700|Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <script src="{{ url_for('static', filename="javascript/jquery.min.js") }}"></script>
+    <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.autosize/3.0.15/autosize.min.js"></script>
+</head>
+<body id="body">
+
+<div class="modal" id="delete-confirmation">
+  <h1>Delete Page</h1>
+  <p>Are you sure that you would like to delete this page?</p>
+  <button id="delete-modal">Delete</button>
+  <button id="cancel">Cancel</button>
+</div>
+
+<nav id="nav" class="">
+        <h2>Admin<span>Panel</span></h2>
+        <ul >
+            <li><a href="/">Home</a></li>
+            <li>
+                <span class="navdrop">Pages</span>
+                <ul>
+                    {% for page in pages %}
+                        <li class="page-link">{{ page }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li><a href="/admin/help">Help</a></li>
+        </ul>
+        <i class="fa fa-caret-right fa-lg"></i>
+</nav>
+
+<main id="main">
+    
+    
+
+
+    {% raw %}
+    <article id="elements" class="clear">
+
+        <input id="title" v-model="pageName" type="text" placeholder="Page Name">
+
+
+
+        <button v-on:click="submit" id="submit">Submit</button>
+
+        <button onclick="showModal('delete-confirmation')" id="delete">Delete</button>
+
+        <h1>Page Elements</h1>
+
+        <section v-bind:class="{'active': item.open}" v-for="item in content">
+            <header>
+                <button class="dropdown" v-on:click="dropdown($index)"><i class="fa fa-lg fa-chevron-down"></i></button>
+                <div>
+                    <input v-model="item.tag" type="text" placeholder="Tag">
+                    <input v-model="item.class" type="text" placeholder="Class">
+                    <input v-model="item.id" type="text" placeholder="ID">
+                </div>
+                <button class="remove" v-on:click="removeItem($index)"><i class="fa fa-lg fa-times"></i></button>
+            </header>
+            <textarea v-show="item.open" v-on:keydown="auto" v-model="item.content"></textarea>
+        </section>
+
+        <button class="add-item" v-on:click="addItem"><i class="fa fa-lg fa-plus"></i></button>
+
+        <!--
+        <div class="functions">
+            <button v-on:click="addItem">Add Item</button>
+        </div>
+        / -->
+    </article>
+
+    <article id="meta" class="clear">
+
+        <h1>Meta</h1>
+
+        <section v-bind:class="{'active': item.open}" v-for="item in meta">
+            <header>
+                <button class="dropdown" v-on:click="dropdownMeta($index)"><i class="fa fa-lg fa-chevron-down"></i></button>
+                <div>
+                    <input v-model="item.title" type="text" placeholder="Meta Title">
+
+                </div>
+                <button class="remove" v-on:click="removeMeta($index)"><i class="fa fa-lg fa-times"></i></button>
+            </header>
+            <textarea v-show="item.open" v-on:keydown="auto" v-model="item.value"></textarea>
+        </section>
+
+        <button class="add-item" v-on:click="addMeta"><i class="fa fa-lg fa-plus"></i></button>
+    </article>
+
+
+    {% endraw %}
+
+</main>
+
+<script src="{{ url_for('static', filename="javascript/panel.js") }}"></script>
+
+
+
+</body>
+</html>

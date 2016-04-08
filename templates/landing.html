@@ -1,0 +1,11 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+    <main>
+
+        {% for i in conv(f['apiGetPages']()) %}
+            <a href="/pages/{{ i }}"><div id="{{ i }}" class="page">{{ i }}</div></a>
+        {% endfor %}
+
+    </main>
+{% endblock %}

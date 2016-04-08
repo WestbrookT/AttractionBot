@@ -1,0 +1,51 @@
+$highlight: #64DDBB;
+$highlight: #1DABB8;
+$highlight: #10aae1;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1, h3 {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  article {
+    max-width: 800px;
+    padding: 30px;
+  }
+
+  img {
+    box-shadow: 0 2px 6px 0 rgba(#000, 0.5);
+    max-width: 100%;
+    margin-left: 30px;
+  }
+
+  a h1 {
+    background: $highlight;
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    box-shadow: 0 2px 6px 0 rgba(#000, 0.5);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 4px 10px 0 rgba(#000, 0.6);
+    }
+  }
+
+  p {
+    text-indent: 15px;
+  }
+}

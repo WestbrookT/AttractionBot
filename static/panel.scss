@@ -1,0 +1,417 @@
+$highlight: #64DDBB;
+$highlight: #10aae1;
+$delete: #C82647;
+
+
+$navwidth: 200px;
+
+$navtab: 20px;
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #eee;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+
+
+body * {
+  box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+
+nav {
+
+  position: fixed;
+  background: #222;
+  height: 100%;
+  color: #efefef;
+  padding: $navtab;
+
+  transform: translateX(-($navwidth - $navtab));
+  transition: all .2s ease-in-out;
+  width: $navwidth;
+
+  h2 {
+    margin: 10px 0;
+    font-weight: 400;
+    line-height: 1.6em;
+    letter-spacing: 1px;
+
+    span {
+      color: $highlight;
+      font-weight: 300;
+    }
+  }
+}
+
+nav.active {
+  transform: translateX(0%);
+}
+
+nav i {
+  position: absolute;
+  top: 50%;
+  left: ($navwidth - $navtab);
+  width: $navtab;
+  display: block;
+  text-align: center;
+  transition: all .2s .4s ease-in-out;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+nav.active i {
+  transform: scaleX(-1) translateY(-50%);
+  cursor: auto;
+
+}
+
+nav.active ~ main {
+  transform: translateX($navwidth);
+  padding-left: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 10px 0;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+    }
+
+
+    ul {
+      overflow: hidden;
+      height: 0;
+      font-weight: 100;
+      padding-left: 10px;
+      transition: all .2s ease-in-out;
+      opacity: 0;
+
+      li {
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          color: $highlight;
+        }
+      }
+    }
+
+    ul.active {
+      padding-top: 15px;
+      height: auto;
+      opacity: 1;
+
+    }
+  }
+}
+
+
+
+main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: all .2s ease-in-out;
+  height: 100vh;
+  padding-left: ($navtab + 20);
+
+
+  #title {
+    border: none;
+    border-bottom: 2px solid $highlight;
+    color: #444;
+    line-height: 1.6em;
+    letter-spacing: 2px;
+    background: none;
+    padding: 5px 0px;
+    width: 50%;
+    outline: none;
+    font-size: 1.3rem;
+  }
+
+
+
+}
+
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+.clear:after {
+    clear: both;
+}
+
+
+article {
+  margin-bottom: 30px;
+
+  input, button {
+    margin-bottom: 20px;
+  }
+
+  section {
+    border-left: 0px solid $highlight;
+    transition: border .2s ease-in-out;
+    border-top: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px 0 rgba(#000, 0.5);
+    margin-bottom: 30px;
+
+    header {
+      transition: all 0.2s ease-in-out;
+      background: #fff;
+      padding: 20px;
+      min-height: 50px;
+      margin: 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      div {
+        flex-grow: 1;
+        margin-left: 10px;
+      }
+
+      input, button {
+        margin: 0;
+        background: none;
+        border: none;
+        outline: none;
+      }
+
+      input {
+        //border-bottom: 1px solid #aaa;
+        font-size: 0.9rem;
+        background: #eee;
+        padding: 5px;
+        border-radius: 2px;
+        margin-left: 10px;
+      }
+
+      button {
+        color: #aaa;
+        cursor: pointer;
+      }
+
+      .dropdown {
+        transition: all .2s ease-in-out;
+        color: $highlight;
+      }
+    }
+
+    &.active {
+      //background: #2C3642;
+      border-left: 5px solid $highlight;
+
+      .dropdown {
+        transform: scaleY(-1);
+        }
+    }
+
+    button.remove {
+      float: right;
+    }
+
+    textarea {
+      display: block;
+      padding: 20px;
+      width: 100%;
+      resize: none;
+      border: none;
+      border-top: 1px solid #ccc;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:nth-of-type(1) {
+      //border-top: 1px solid #aaa;
+    }
+
+  }
+
+
+  .functions {
+    float: right;
+
+    form {
+      display: inline-block;
+    }
+
+    form textarea {
+      display: none;
+    }
+
+    button {
+      transition: box-shadow 0.2s ease-in-out;
+      padding: 16px 22px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 2px;
+      box-shadow: 0 2px 6px 0 rgba(#000, 0.5);
+      background: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      color: #aaa;
+      outline: none;
+      margin-left: 10px;
+
+      &.highlight {
+        background: $highlight;
+        color: #fff;
+      }
+
+      &:hover {
+        box-shadow: 0 4px 10px 0 rgba(#000, 0.6);
+      }
+    }
+  }
+
+}
+
+article h1 {
+  display: block;
+  width: 100%;
+  color: #222;
+  font-weight: normal;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+
+button#submit, #delete {
+  transition: box-shadow 0.2s ease-in-out;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px 0 rgba(#000, 0.5);
+  background: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  color: $highlight;
+  outline: none;
+  margin-left: 10px;
+  float: right;
+
+  &.highlight {
+    background: $highlight;
+    color: #fff;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 10px 0 rgba(#000, 0.6);
+  }
+
+
+}
+
+button#delete {
+  background: $delete;
+  color: #fff;
+}
+
+button.add-item {
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0 2px 6px 0 rgba(#000, 0.5);
+  cursor: pointer;
+  display: block;
+  background: $highlight;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  max-width: 100%;
+  border: none;
+  border-radius: 50%;
+  margin: 0 auto;
+  outline: none;
+
+  &:hover {
+    box-shadow: 0 4px 10px 0 rgba(#000, 0.6);
+  }
+}
+
+.modal {
+  transition: opacity 0.2s ease-in;
+  opacity: 0;
+  background: #fff;
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 30px;
+  max-width: 300px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px 0 rgba(#000, 0.5);
+  pointer-events: none;
+
+  h1 {
+    color: #222;
+    margin-top: 0;
+  }
+
+  p {
+    color: #333;
+  }
+
+  button {
+    float: right;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    padding: 10px 15px;
+    border-radius: 2px;
+    color: #333;
+    cursor: pointer;
+
+    &#delete-modal {
+      background: $delete;
+      color: #fff;
+    }
+  }
+
+  &.active {
+    opacity: 100;
+    pointer-events: initial;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(#fff, 0.3);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+
+}
