@@ -1,0 +1,6 @@
+key = 'EAAGm0PX4ZCpsBAOdoOe1JpTgWXP9huTZCj3pZCjJHNx0c5GYkUJDrmVwuOf0HuYoJnoQHL1WngJKei1s4ZChaQj2ovhPjkFwAOEP0E125cHDAMSwdM9jt67bUxtsFDyn93zZBNxCZBDX8wygZB8yfjSKPxFZCEs7wyQsaXb2KcoLQgZDZD'
+import json
+
+json.loads("jsonstring")
+
+json.dump()
