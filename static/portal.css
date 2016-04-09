@@ -1,16 +1,25 @@
-.button {
-    margin: 5px 0px;
-    border: 1px solid #777;
-    width: 8em;
-    padding: 2px 1px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-}
-.button a{
-    margin-right: auto;
-    margin-left: auto;
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
+}
+
+.button {
+    margin: 10px;
+    box-shadow: 0 2px 5px 1px #aaa;
+    width: 8em;
+    padding: 10px;
     text-decoration: none;
-    color: black;
+
+    color: #eee;
+    background: #f06;
+
+}
+
+a {
+    text-decoration: none;
 }
