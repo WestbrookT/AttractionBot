@@ -27,3 +27,32 @@ a {
 p {
     width: 400px;
 }
+
+.text {
+    height: 50px;
+    width: 200px;
+    font-size: 24pt;
+    border: none;
+    box-shadow: inset 1px 1px 5px #999;
+    padding: 5px;
+}
+
+.text:focus {
+    outline: none;
+}
+
+input.button {
+    border: none;
+    height: 50px;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+
+}
+
+form input {
+    margin: 10px;
+}
