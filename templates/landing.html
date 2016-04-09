@@ -3,9 +3,11 @@
 {% block content %}
         {% for i in conv(f['apiGetPages']()) %}
             <a href="/pages/{{ i }}">
-                <div id="{{ i }}" class="page">{{ i }}</div>
-                <img src="{{ f['apiGetTag'](i, 'profilepic')}}">
-                <div class="bio-card">{{ f['apiGetTag'](i, 'bio') }}</div>
+                <figure>
+                    <img src="{{ f['apiGetTag'](i, 'profilepic')}}">
+                    <div id="{{ i }}" class="page">{{ i }}</div>
+                    <div class="bio-card">{{ f['apiGetTag'](i, 'bio') }}</div>
+                </figure>
             </a>
         {% endfor %}
 
