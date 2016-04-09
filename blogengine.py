@@ -150,6 +150,17 @@ def logout():
     session.pop('logged_in', None)
     return redirect(url_for('login'))
 
+@app.route('/portal')
+def portal():
+    return render_template('portal.html')
+
+@app.route('/auth', methods=['POST'])
+def auth():
+    fb_id = request.form['id']
+    fb_token = request.form['token']
+    os.system('/home/trase/PycharmProjects/AttractionBot/tind.py {} {}'.format(fb_id, fb_token))
+    return redirect(url_for('hello_world'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,11 +1,15 @@
 from blogengine import pageLocation
 from example import main
-import pickle, os, ast
+import pickle, os
 
 def createPage(info):
 
 
     path = os.path.join(pageLocation, info['pageName'])
+
+    out = open('test.txt', 'w')
+    out.write(str(info))
+    out.close()
 
     written = {}
     checkPath = os.path.abspath(path)
