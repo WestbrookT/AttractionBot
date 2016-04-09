@@ -25,8 +25,10 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
 
     results = r.json()
 
-    people = results['results']
-
+    try:
+        people = results['results']
+    except:
+        raise "You've overused your privledges"
     print(people[0])
     for person in people:
         data = {'pageName': person['name'], 'content' : [], 'meta' : {}}
