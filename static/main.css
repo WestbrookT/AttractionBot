@@ -2,24 +2,30 @@ body * {
   box-sizing: border-box; }
 
 body {
-    background: #eee;
+    background: #fff;
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    padding-bottom: 30px;
 }
 
 nav {
     margin: 0 0 8px 0;
     background-color: #444;
     height: 4em;
-    width: 106%;
+    width: 100%;
     padding: 2px;
     font-family: 'Roboto', sans-serif;
     color: #efefef;
     z-index: 1;
-    display: flex;
     padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px 0px #777;
+    position: fixed;
+    top: 0;
 }
 
 nav a {
@@ -39,6 +45,10 @@ nav li {
     padding: 5px 8px;
     font-size: 1em;
     font-weight: bold;
+}
+
+.container {
+    margin-top: 5em;
 }
 
 
@@ -75,11 +85,12 @@ nav li {
     position: relative;
     overflow-x: hidden;
     border-radius: 0px;
+
 }
 
 .app a::before {
     content: "";
-    background: linear-gradient(to top, white, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
     width: 100%;
     display: block;
     height: 100%;
@@ -105,6 +116,7 @@ nav li {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background: linear-gradient(to right, #F06, rgba(255, 0, 109, 0.6));
 
 
 }
@@ -115,9 +127,11 @@ nav li {
 }
 
 section {
+
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    font-size: 24pt;
 
 }
 
@@ -125,6 +139,8 @@ section img {
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
+    box-shadow: 0 0 5px 0px #777;
+    max-width: 100%;
 
 
 }
