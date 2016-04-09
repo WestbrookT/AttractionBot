@@ -1,9 +1,5 @@
 body {
     background: #efefef;
-    position: fixed;
-    height: 100%;
-    overflow: hidden;
-    width: 100%;
     padding: 0;
     margin: 0;
 }
@@ -48,19 +44,18 @@ nav a {
     text-transform: uppercase;
 }
 
-.container {
-    align-content: center;
-}
-.app {
-    align-content: center;
-    position: relative;
-    background: #ffffff;
+section {
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
-    width: 93%;
-    padding: 1em;
-    border: 1px solid #E5E5E5;
-    font-family: 'Roboto', sans-serif;
+
+}
+
+section img {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+
 }
 
 /*

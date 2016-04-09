@@ -7,11 +7,11 @@ import requests, json, template, sys
 
 
 
-token = '''EAAGm0PX4ZCpsBADBWwKcJwMD6sz5NX7hjrKwFj5F7E1UAE3llZAxRT7Y3mmRFDNSjsM5rzSpsWF8NxXQjhTMH76XjJoZBGpz9Bu13FSw0FKHEw0fELenBtJcYmb67cgq7TOKyKapcvlOfFHan1PXRye2MfSy3jdkhDtKOEouQZDZD'''
+token = '''CAAGm0PX4ZCpsBAPCTHOySDDNZA2YA1SV83no7ZAlIeSQabyhZCV9MAJXtCoHbBMAhVXZARtgjg61cbKuQy39PkB6Jt0ZBLkvRt8e2Yr826IiZBrILgjerp8LRPEllc9lZBprZAU7TMZBSWv8ZAHcVZBOg4dldfH6oRmLZAMYnuFEn3UJ5UXfI8eZCcqApOb9CC4yv3dVcA1SvvZAtEySAZDZD'''
 
 
 
-fb_id = str(100009796425951)
+fb_id = str(100011654715820)
 
 auth = {'facebook_token':token,'facebook_id':fb_id}
 
@@ -51,6 +51,8 @@ for person in people:
 
     data['content'].append({'tag':'p', 'class':'bio', 'id':'', 'content':person['bio']})
 
+    r = s.get('https://api.gotinder.com/like/{}'.format(person['_id']))
+
 
     try:
         data['meta']['bio'] = person['bio']
@@ -75,7 +77,7 @@ for person in people:
     try:
         data['meta']['profilepic'] = person['profile_picture']
     except:
-        pass
+        data['meta']['profilepic'] = person['photos'][0]['processedFiles'][0]['url']
 
 
     for image in person['photos']:
