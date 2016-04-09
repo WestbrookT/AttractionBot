@@ -1,19 +1,11 @@
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
-
 nav {
-  position: fixed;
-  background-color: #999;
-  top: 0;
-  left: 0;
-  height: 4em;
-  width: 100%;
-  z-index: 1;
-  padding: 2px;
-  font-family: 'Roboto', sans-serif;
-  color: #efefef;
+    margin: -8px 0 0 -8px;
+    background-color: #999;
+    height: 4em;
+    width: 106%;
+    padding: 2px;
+    font-family: 'Roboto', sans-serif;
+    color: #efefef;
 }
 nav .nav-header{
     width: 250px;
@@ -44,8 +36,8 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
 }
-
-.application {
+/*
+div .application {
     position: fixed;
     padding: 0 1em;
     margin: 0;
@@ -60,3 +52,4 @@ nav a {
     font-family: 'Roboto', sans-serif;
     overflow: scroll;
 }
+*/
