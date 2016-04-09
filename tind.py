@@ -11,7 +11,7 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
     s = requests.session()
 
     r = s.post('https://api.gotinder.com/auth', data=auth)
-
+    print(r.text)
     auth_response = r.json()
 
     print(auth_response)
