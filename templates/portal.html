@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tinder Archive Portal</title>
+    <link href="../static/portal.css" rel="stylesheet">
 </head>
 <body>
 
@@ -11,13 +12,16 @@
             <input class="id" type="text" name="id" placeholder="id">
             <input type="submit" value="submit">
     </form>
-    <a href="https://www.facebook.com/dialog/oauth?client_id=464891386855067&redirect_uri=https://www.facebook.com/connect/login_success.html&scope=basic_info,email,public_profile,user_about_me,user_activities,user_birthday,user_education_history,user_friends,user_interests,user_likes,user_location,user_photos,user_relationship_details&response_type=token" target="_blank">
-        Token retrieval.
-    </a>
-    <a href="http://facebook.com/profile.php?=73322363" target="_blank">
-        ID.
-    </a>
-
+    <div class="button">
+        <a href="https://www.facebook.com/dialog/oauth?client_id=464891386855067&redirect_uri=https://www.facebook.com/connect/login_success.html&scope=basic_info,email,public_profile,user_about_me,user_activities,user_birthday,user_education_history,user_friends,user_interests,user_likes,user_location,user_photos,user_relationship_details&response_type=token" target="_blank">
+            Token retrieval
+        </a>
+    </div>
+    <div class="button">
+        <a href="http://facebook.com/profile.php?=73322363" target="_blank" >
+            ID retrieval
+        </a>
+    </div>
 
 </body>
 </html>
