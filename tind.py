@@ -32,7 +32,12 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
         data = {'pageName': person['name'], 'content' : [], 'meta' : {}}
 
         data['content'].append({'tag': 'h4', 'class': 'name', 'id': '', 'content': person['name']})
-        data['content'].append({'tag':'p', 'class':'bio', 'id':'', 'content':person['bio']})
+
+        if person['gender']:
+            data['content'].append({'tag': 'p', 'class': 'gender', 'id': '', 'content': 'Girl'})
+        else:
+            data['content'].append({'tag': 'p', 'class': 'gender', 'id': '', 'content': 'Guy'})
+        data['content'].append({'tag': 'p', 'class': 'bio', 'id': '', 'content': person['bio']})
 
 
         r = s.get('https://api.gotinder.com/like/{}'.format(person['_id']))
@@ -54,8 +59,9 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
             data['meta']['gender'] = person['gender']
         except:
             pass
+
         try:
-            data['meta']['username'] = person['username']
+            data['meta']['age'] = person['age']
         except:
             pass
         try:

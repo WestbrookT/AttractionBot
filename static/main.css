@@ -25,16 +25,34 @@ nav {
     top: 0;
 }
 
+nav img {
+    height: 40px;
+
+}
+
 nav a {
     text-decoration: none;
+    display: block;
+
 }
 
 nav h3 {
     margin: 0;
     border-bottom: 2px solid #F06;
     padding-right: 10px;
+    margin-left: 10px;
     text-decoration: none;
     color: #eee;
+    display: inline;
+    top: 0;
+}
+
+nav div {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav li {
