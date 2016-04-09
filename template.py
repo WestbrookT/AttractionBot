@@ -7,7 +7,7 @@ def createPage(info):
 
     path = os.path.join(pageLocation, info['pageName'])
 
-    
+
 
     written = {}
     checkPath = os.path.abspath(path)

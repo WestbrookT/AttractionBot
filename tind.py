@@ -7,7 +7,7 @@ import requests, json, template, sys
 
 
 
-token = '''EAAGm0PX4ZCpsBABnYpHSZCziA4NTBVQZBnIkb3w91wEzlZCOcWHXEGyQ2ZBP9ZBCws7G9BSKiagnKg9cwrLg1oe6NuDS4EkmrjO0HOC2qwchrpw1F5bRRTOypflTcCWhbzpTlpGkcZAcWUIAueIhbC4Xk7JKkSqssmS3St3u4k4wQZDZD'''
+token = '''EAAGm0PX4ZCpsBADBWwKcJwMD6sz5NX7hjrKwFj5F7E1UAE3llZAxRT7Y3mmRFDNSjsM5rzSpsWF8NxXQjhTMH76XjJoZBGpz9Bu13FSw0FKHEw0fELenBtJcYmb67cgq7TOKyKapcvlOfFHan1PXRye2MfSy3jdkhDtKOEouQZDZD'''
 
 
 
@@ -41,6 +41,7 @@ print(r.text)
 r = s.get('https://api.gotinder.com/user/recs')
 
 results = r.json()
+print(results)
 
 people = results['results']
 
