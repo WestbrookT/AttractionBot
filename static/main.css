@@ -37,10 +37,9 @@ nav a {
 }
 
 nav h3 {
-    margin: 0;
     border-bottom: 2px solid #F06;
     padding-right: 10px;
-    margin-left: 10px;
+    margin: 0 0 0 10px;
     text-decoration: none;
     color: #eee;
     display: inline;
