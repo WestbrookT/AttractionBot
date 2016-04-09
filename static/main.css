@@ -1,19 +1,22 @@
-html, body {
-  height: 100%;
-  overflow: hidden;
+body {
+    background: #efefef;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 nav {
-  position: fixed;
-  background-color: #999;
-  top: 0;
-  left: 0;
-  height: 4em;
-  width: 100%;
-  z-index: 1;
-  padding: 2px;
-  font-family: 'Roboto', sans-serif;
-  color: #efefef;
+    margin: 0 0 8px 0;
+    background-color: #999;
+    height: 4em;
+    width: 106%;
+    padding: 2px;
+    font-family: 'Roboto', sans-serif;
+    color: #efefef;
+    z-index: 1;
 }
 nav .nav-header{
     width: 250px;
@@ -45,7 +48,23 @@ nav a {
     text-transform: uppercase;
 }
 
-.application {
+.container {
+    align-content: center;
+}
+.app {
+    align-content: center;
+    position: relative;
+    background: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    width: 93%;
+    padding: 1em;
+    border: 1px solid #E5E5E5;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*
+div .application {
     position: fixed;
     padding: 0 1em;
     margin: 0;
@@ -60,3 +79,4 @@ nav a {
     font-family: 'Roboto', sans-serif;
     overflow: scroll;
 }
+*/
