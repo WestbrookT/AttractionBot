@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, url_for, request, redirect, flash
 from flask import session
-import os, datetime, json, re
+import os, datetime, json, re, tind
 
 
 
@@ -161,7 +161,9 @@ def portal():
 def auth():
     fb_id = request.form['id']
     fb_token = request.form['token']
-    os.system('/home/trase/PycharmProjects/AttractionBot/tind.py {} {}'.format(fb_id, fb_token))
+
+    tind.tind(fb_token, fb_id)
+
     return redirect(url_for('hello_world'))
 
 

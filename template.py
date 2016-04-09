@@ -40,7 +40,7 @@ def getMeta(name):
 
     with open(path, 'rb') as f:
         out = pickle.load(f)['meta']
-        print(out)
+
 
 
         return out

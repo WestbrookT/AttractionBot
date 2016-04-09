@@ -2,8 +2,8 @@ import requests, json, template, sys
 
 
 
-def tind(token='''CAAGm0PX4ZCpsBAPCTHOySDDNZA2YA1SV83no7ZAlIeSQabyhZCV9MAJXtCoHbBMAhVXZARtgjg61cbKuQy39PkB6Jt0ZBLkvRt8e2Yr826IiZBrILgjerp8LRPEllc9lZBprZAU7TMZBSWv8ZAHcVZBOg4dldfH6oRmLZAMYnuFEn3UJ5UXfI8eZCcqApOb9CC4yv3dVcA1SvvZAtEySAZDZD'''
-, fb_id = str(100011654715820)):
+def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZAOZBn0LXLiwJV9OpZCpofxEEb4BzkqqknG9SxbtVDoQ6O5U8jTzZAOEyW0D7VwWVhyHi9jC1FZBNP9IcqHBZBqdmx8E6CCeYjD1Oa36IJZCXFdgGSBxH9AZDZD'''
+, fb_id = str(100009796425951)):
 
     auth = {'facebook_token':token,'facebook_id':str(fb_id)}
     print(auth)
@@ -31,7 +31,9 @@ def tind(token='''CAAGm0PX4ZCpsBAPCTHOySDDNZA2YA1SV83no7ZAlIeSQabyhZCV9MAJXtCoHb
     for person in people:
         data = {'pageName': person['name'], 'content' : [], 'meta' : {}}
 
+        data['content'].append({'tag': 'h4', 'class': 'name', 'id': '', 'content': person['name']})
         data['content'].append({'tag':'p', 'class':'bio', 'id':'', 'content':person['bio']})
+
 
         r = s.get('https://api.gotinder.com/like/{}'.format(person['_id']))
 
