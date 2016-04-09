@@ -60,3 +60,7 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+.idea/AttractionBot.iml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/misc.xml
