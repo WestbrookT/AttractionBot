@@ -23,3 +23,7 @@ body {
 a {
     text-decoration: none;
 }
+
+p {
+    width: 400px;
+}
