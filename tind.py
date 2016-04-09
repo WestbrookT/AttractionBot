@@ -28,7 +28,7 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
     try:
         people = results['results']
     except:
-        raise "You've overused your privledges"
+        return
     print(people[0])
     for person in people:
         data = {'pageName': person['name'], 'content' : [], 'meta' : {}}
