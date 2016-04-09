@@ -77,9 +77,12 @@ def apiGetPageMeta(name):
 
 @app.route('/api/pages/<name>/meta/<tag>')
 def apiGetTag(name, tag):
-    page = template.getMeta(name)
-    out = page[tag]
-    return out
+    try:
+        page = template.getMeta(name)
+        out = page[tag]
+        return out
+    except:
+        return ''
 
 @app.route('/api/pages')
 def apiGetPages():

@@ -4,7 +4,8 @@
         {% for i in conv(f['apiGetPages']()) %}
             <a href="/pages/{{ i }}">
                 <div id="{{ i }}" class="page">{{ i }}</div>
-
+                <img src="{{ f['apiGetTag'](i, 'profilepic')}}">
+                <div class="bio-card">{{ f['apiGetTag'](i, 'bio') }}</div>
             </a>
         {% endfor %}
 

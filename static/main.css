@@ -44,6 +44,28 @@ nav a {
     text-transform: uppercase;
 }
 
+.app {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4em;
+    width: 90%;
+    justify-content: space-around;
+}
+
+.app a {
+    display: inline-block;
+    width: 30%;
+    background: #aaa;
+    height: calc(33vh - 4em);
+}
+
+.app a img {
+    width: 50%;
+    height: auto;
+
+}
+
 section {
     width: 50%;
     margin-left: auto;
@@ -55,6 +77,7 @@ section img {
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
+
 
 }
 
