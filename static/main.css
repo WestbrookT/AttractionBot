@@ -1,3 +1,6 @@
+body * {
+  box-sizing: border-box; }
+
 body {
     background: #eee;
     padding: 0;
@@ -18,43 +21,39 @@ nav {
     padding-left: 30px;
     align-items: center;
 }
-nav .nav-header{
-    width: 250px;
+
+nav a {
+    text-decoration: none;
 }
+
 nav h3 {
     margin: 0;
     border-bottom: 2px solid #F06;
+    padding-right: 10px;
+    text-decoration: none;
+    color: #eee;
 }
-nav ul {
-    margin: 1em 0 0 3em;
-    padding: 0;
-    list-style: none;
-    border-bottom: 2px solid #F06;
-    width: 800px;
-}
+
 nav li {
     display: inline;
     padding: 5px 8px;
     font-size: 1em;
     font-weight: bold;
 }
-nav a {
-    color: #efefef;
-    font-size: 11px;
-    font-weight: bold;
-    display: block;
-    padding: 05px 05px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
+
 
 .app {
-    display: block;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
 
     width: 90%;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.app main {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .app figure {
@@ -64,34 +63,55 @@ nav a {
 
 .app a {
     display: inline-block;
-    width: 30%;
+    width: 29vw;
     background: #fff;
     height: 33vh;
     overflow-y: hidden;
     text-decoration: none;
     color: #222222;
     box-shadow: 1px 1px 5px 0 #888;
-    padding: 5px;
+
     text-align: center;
+    position: relative;
+    overflow-x: hidden;
+    border-radius: 0px;
 }
 
 .app a::before {
-    
+    content: "";
+    background: linear-gradient(to top, white, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    width: 100%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
 }
 
 .app a div {
     margin-bottom: 5px;
     width: 100%;
     text-align: left;
+    padding: 5px;
 }
 
-.app a img {
+.app a .img-holder {
 
-    height: auto;
+    height: 50%;
     margin-left: auto;
     margin-right: auto;
-    max-height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
+
+}
+
+.img-holder img {
+
+    margin-top: 150px;
 }
 
 section {
