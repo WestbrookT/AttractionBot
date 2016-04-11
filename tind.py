@@ -1,4 +1,8 @@
 import requests, json, template, sys
+import urllib, os
+from blogengine import pageLocation
+
+path = os.path.join(pageLocation, '..')
 
 
 
@@ -28,6 +32,7 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
     try:
         people = results['results']
     except:
+        print(results)
         return
     print(people[0])
     for person in people:
@@ -42,7 +47,7 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
         data['content'].append({'tag': 'p', 'class': 'bio', 'id': '', 'content': person['bio']})
 
 
-        r = s.get('https://api.gotinder.com/like/{}'.format(person['_id']))
+
 
 
         try:
@@ -71,11 +76,42 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
         except:
             data['meta']['profilepic'] = person['photos'][0]['processedFiles'][0]['url']
 
-
+        images = []
         for image in person['photos']:
             data['content'].append({'tag':'img','class':'image','id':'','content':image['processedFiles'][0]['url']})
+            images.append(image['processedFiles'][0]['url'])
+        print(images)
 
-        template.createPage(data)
+        hotness = 0.0
+        number = 0
+
+        for i in images:
+            print(i)
+            img = urllib.request.urlopen(i)
+            f = open(os.path.join(path, 'test.jpg'), 'wb')
+            f.write(img.read())
+            f.close()
+
+            headers = {'browseFile': ('test.jpg', open(os.path.join(path, 'test.jpg'), 'rb'))}
+            response = requests.post('http://www.howhot.io/main.php', files=headers)
+            message = response.json()
+            try:
+                print(message['message']['hotness'])
+                hotness += float(message['message']['hotness'])
+                number += 1
+                print(hotness)
+            except:
+                pass
+
+
+        if number == 0 or hotness/number >= 4:
+            try:
+                print('overall value: ')
+                print(hotness/number)
+            except:
+                pass
+            r = s.get('https://api.gotinder.com/like/{}'.format(person['_id']))
+            template.createPage(data)
         print('success')
 
 if __name__ == '__main__':
