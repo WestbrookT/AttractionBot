@@ -6,7 +6,7 @@ path = os.path.join(pageLocation, '..')
 
 
 
-def tind():
+def tind(token, fb_id):
 
     auth = {'facebook_token':token,'facebook_id':str(fb_id)}
     print(auth)
