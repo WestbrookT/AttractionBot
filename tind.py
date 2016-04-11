@@ -6,8 +6,7 @@ path = os.path.join(pageLocation, '..')
 
 
 
-def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZAOZBn0LXLiwJV9OpZCpofxEEb4BzkqqknG9SxbtVDoQ6O5U8jTzZAOEyW0D7VwWVhyHi9jC1FZBNP9IcqHBZBqdmx8E6CCeYjD1Oa36IJZCXFdgGSBxH9AZDZD'''
-, fb_id = str(100009796425951)):
+def tind():
 
     auth = {'facebook_token':token,'facebook_id':str(fb_id)}
     print(auth)
@@ -104,7 +103,7 @@ def tind(token='''EAAGm0PX4ZCpsBAJZAyNmXsqXBWcFIlPajSZCcJ2pKKJMSZBtmrmRZCkLIS4ZA
                 pass
 
 
-        if number == 0 or hotness/number >= 4:
+        if number == 0 or hotness/number >= 5:
             try:
                 print('overall value: ')
                 print(hotness/number)
