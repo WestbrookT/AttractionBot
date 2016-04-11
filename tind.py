@@ -107,6 +107,7 @@ def tind(token, fb_id):
             try:
                 print('overall value: ')
                 print(hotness/number)
+                data['meta']['rating'] = (hotness/number)-(hotness/number%1)
             except:
                 pass
             r = s.get('https://api.gotinder.com/like/{}'.format(person['_id']))
