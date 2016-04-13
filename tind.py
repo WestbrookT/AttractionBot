@@ -34,6 +34,7 @@ def tind(token, fb_id):
         print(results)
         return
     print(people[0])
+    print(len(people))
     for person in people:
         data = {'pageName': person['name'], 'content' : [], 'meta' : {}}
 
@@ -103,7 +104,7 @@ def tind(token, fb_id):
                 pass
 
 
-        if number == 0 or hotness/number >= 5:
+        if number == 0 or hotness/number >= 5.5:
             try:
                 print('overall value: ')
                 print(hotness/number)
@@ -112,6 +113,8 @@ def tind(token, fb_id):
                 pass
             r = s.get('https://api.gotinder.com/like/{}'.format(person['_id']))
             template.createPage(data)
+        else:
+            s.get('https://api.gotinder.com/pass/{}'.format(person['_id']))
         print('success')
 
 if __name__ == '__main__':
